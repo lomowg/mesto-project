@@ -1,4 +1,3 @@
-// @todo: Темплейт карточки
 const placesList = document.querySelector('.places__list')
 
 const profilePopup = document.querySelector('.popup_type_edit')
@@ -14,8 +13,6 @@ cardPopup.classList.add('popup_is-animated')
 imagePopup.classList.add('popup_is-animated')
 
 
-
-// Функция создания карточек
 const createCard = function (cardItem) {
     const cardTemplate = document.querySelector('#card-template').content;
     const card = cardTemplate.querySelector('.card').cloneNode(true);
@@ -39,8 +36,6 @@ const createCard = function (cardItem) {
 
 initialCards.forEach((item => placesList.append(createCard(item))));
 
-// Общие функции для .popup
-
 function openModal(popup) {      
     popup.classList.add('popup_is-opened');
 }
@@ -49,7 +44,6 @@ function closeModal(popup) {
     popup.classList.remove('popup_is-opened');
 }
 
-// popup редактирования профиля
 const nameInput = profilePopup.querySelector('.popup__input_type_name');
 const descrInput = profilePopup.querySelector('.popup__input_type_description'); 
 
@@ -76,7 +70,6 @@ profilePopup.querySelector('.popup__form').addEventListener('submit', (e) => {
     closeModal(profilePopup)
 });
 
-// popup добавления карточек
 
 const cardNameInput = cardPopup.querySelector('.popup__input_type_card-name');
 const urlInput = cardPopup.querySelector('.popup__input_type_url'); 
